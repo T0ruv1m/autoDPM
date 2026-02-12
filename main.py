@@ -1,5 +1,5 @@
 from src.paths import get_path
-from src.tasks import fill_form
+from src.tasks import fill_form, test_quantidade
 from src.data_loader import load_items
 import pyautogui
 
@@ -13,7 +13,9 @@ def main():
         
         for item in dataset:
             try:
-                fill_form(item)
+                if not fill_form(item):
+                #if not test_quantidade(item):
+                    raise ValueError('ERRO')
             except Exception as e:
                 print(f"Failed to process item {item.codigo_ed}: {e}")
             continue

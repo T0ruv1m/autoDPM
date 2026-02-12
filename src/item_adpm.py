@@ -6,7 +6,8 @@ class ItemADPM:
     codigo_ed: str
     descricao: str
     unit_fornecimento: str
-    valor_unit : str
+    #valor_unit : str
+    quantidade: str
 
     UNIDADE_MAPPING = {
         "M²": '134',
@@ -14,6 +15,7 @@ class ItemADPM:
         "M": '132',
         "UND": '204',
         "M³": '133'
+        #"MÊS": ''
     }
 
     @property
