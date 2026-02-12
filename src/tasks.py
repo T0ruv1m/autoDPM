@@ -25,3 +25,6 @@ def fill_form(item: ItemADPM) -> bool:
 def test_quantidade(item: ItemADPM) -> bool:
     gui.typewrite(item.quantidade)
     return True
+
+def price_quotation(item: ItemADPM) -> bool:
+    

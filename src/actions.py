@@ -1,5 +1,6 @@
 import pyautogui as gui
 from src.paths import get_path
+import pyperclip
 
 def alert_when_found(picture: str):
     if see(picture):
@@ -34,7 +35,8 @@ def insert_service(desc_ed, codigo_uf: str) -> bool:
       if see('new_servico_screen.png'):
         gui.press('F3')
         gui.press('F3')
-        gui.typewrite(desc_ed)
+        pyperclip.copy(desc_ed)
+        gui.hotkey('ctrl','v')
         gui.press('tab', presses= 2)
         gui.press('4')
         gui.press('tab', presses= 5)
