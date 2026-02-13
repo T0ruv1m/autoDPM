@@ -83,3 +83,19 @@ def finish(quantidade:str) -> bool:
     #if already_registered is not None:
     #    gui.click(already_registered)
     #return True
+
+def search_item(codigo_ed:str) -> bool:
+    limpar_filtro = gui.locateOnScreen(get_path('limpar_filtro.png'),5,confidence= 0.9)
+    gui.click(limpar_filtro)
+    gui.hotkey('shift','tab')
+    gui.typewrite(codigo_ed)
+    if not see('apenas_um_resultado.png'):
+        return False
+    return True
+    
+def paste_valor_unit(valor_unit:str) -> bool:
+    valor_unit_box = gui.locateOnScreen(get_path('valor_unit_box.png'),5,confidence= 0.9)
+    gui.click(valor_unit_box)
+    gui.typewrite(valor_unit)
+    if gui.confirm('Preço está correto?') == 'OK':
+        return True

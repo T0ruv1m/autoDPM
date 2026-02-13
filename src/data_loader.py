@@ -14,7 +14,7 @@ def load_items(file_path:str) -> list[ItemADPM]:
             codigo_ed=str(row['codigo_ed']),
             descricao=str(row['descricao']),
             unit_fornecimento=str(row['unidade']),
-            valor_unit=str(row['valor_unit']),
+            valor_unit=f"{row['valor_unit']:.4f}".replace(".", ","),
             quantidade=f"{row['quantidade']:.2f}".replace(".", ",")
         )
         items.append(item)

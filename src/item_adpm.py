@@ -6,7 +6,7 @@ class ItemADPM:
     codigo_ed: str
     descricao: str
     unit_fornecimento: str
-    #valor_unit : str
+    valor_unit : str
     quantidade: str
 
     UNIDADE_MAPPING = {

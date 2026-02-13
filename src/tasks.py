@@ -27,4 +27,8 @@ def test_quantidade(item: ItemADPM) -> bool:
     return True
 
 def price_quotation(item: ItemADPM) -> bool:
+    if not act.search_item(item.codigo_ed):
+        return False
+    if not act.paste_valor_unit(item.valor_unit):
+        return False
     

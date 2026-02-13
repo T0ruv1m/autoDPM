@@ -1,5 +1,5 @@
 from src.paths import get_path
-from src.tasks import fill_form, test_quantidade
+from src.tasks import fill_form, test_quantidade, price_quotation
 from src.data_loader import load_items
 import pyautogui
 
@@ -13,7 +13,8 @@ def main():
         
         for item in dataset:
             try:
-                if not fill_form(item):
+                #if not fill_form(item):
+                if not price_quotation(item):
                 #if not test_quantidade(item):
                     raise ValueError('ERRO')
             except Exception as e:
